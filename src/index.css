@@ -2,3 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+.side-nav-enter {
+    transform: translateX(100%);
+}
+
+.side-nav-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.side-nav-exit {
+    transform: translateX(0);
+}
+
+.side-nav-exit-active {
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 0.4;
+    transition: opacity 300ms ease-in-out;
+}
+
+.fade-exit {
+    opacity: 0.4;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
