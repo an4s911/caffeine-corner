@@ -39,11 +39,12 @@
 }
 
 button {
-    @apply bg-primary text-fourth border-2 border-primary rounded-full px-4 py-1;
+    @apply bg-primary hover:bg-fourth hover:text-primary text-fourth border-2 border-primary rounded-full px-4 py-1 transition-all;
 }
 
+
 button.light {
-    @apply text-primary bg-fourth border-primary;
+    @apply text-primary bg-fourth border-primary hover:bg-primary hover:text-fourth;
 }
 
 .hover-max-width-height-anim::before {

@@ -9,7 +9,7 @@ function Header() {
     const sideNavBar = useRef(null);
     const sideNavShadow = useRef(null);
 
-    return <header className="relative z-10">
+    return <header className="fixed top-0 w-full z-10 mb-10">
         <div className="flex shadow-md bg-white justify-between items-center p-3">
             <div className="logo">
                 <Logo size={7} />
@@ -19,7 +19,7 @@ function Header() {
             </div>
         </div>
         <CSSTransition nodeRef={sideNavBar} in={sideNavIn} timeout={300} classNames="side-nav" unmountOnExit>
-            <div ref={sideNavBar} className="flex flex-col gap-10 bg-white absolute -z-20 right-0 w-4/5 h-screen py-14 px-8">
+            <div ref={sideNavBar} className="flex flex-col gap-10 bg-white fixed -z-20 right-0 w-4/5 h-screen py-14 px-8">
                 <nav className="text-primary flex text-2xl flex-col gap-8">
                     <Link to="/">Menu</Link>
                     <Link to="/">Rewards</Link>
