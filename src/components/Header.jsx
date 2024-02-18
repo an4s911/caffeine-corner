@@ -27,8 +27,8 @@ function Header() {
     const sideNavShadow = useRef(null);
 
     return (
-        <header className="fixed top-0 w-full z-10 mb-10">
-            <div className="flex shadow-md bg-white justify-between items-center p-3 md:p-6">
+        <header className="fixed top-0 w-full z-10 mb-10 md:shadow-md">
+            <div className="flex shadow-md md:shadow-none bg-white justify-between items-center p-3 md:p-6 max-w-screen-2xl mx-auto">
                 <div className="logo flex items-center gap-5">
                     <Logo size={7} />
                     <div className="text-primary text-xl lg:text-2xl font-bold">
