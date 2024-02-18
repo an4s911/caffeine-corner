@@ -47,7 +47,8 @@ button {
 transition-all;
 }
 
-button.light {
+button.light,
+.card:nth-child(odd) button {
     @apply text-primary bg-fourth border-primary hover:bg-primary hover:text-fourth;
 }
 

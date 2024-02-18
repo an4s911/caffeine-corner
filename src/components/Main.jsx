@@ -6,7 +6,7 @@ import image4 from "../images/card/4.jpg"
 
 function Main() {
     const orderNowUrl = "/";
-    return <main className="flex flex-col gap-6 mb-6 mt-24">
+    return <main className="flex flex-col gap-6 mb-6 mt-24 md:mt-28">
         <Card image={image1} buttonLinkUrl={orderNowUrl} buttonText="Order Now" paragraph="Experience the Classic Latte, a timeless favorite, under 200 calories in a grande." heading="Feel-good finds" />
         <Card image={image2} buttonLinkUrl={orderNowUrl} buttonText="Order Now" paragraph="A Symphony of Flavors: Our Frappuccino, with its Creamy Layers and Biscuit Garnish, is a Melody of Freshness and Quality." heading="Next-level luxurious" />
         <Card image={image3} buttonLinkUrl={orderNowUrl} buttonText="Order Now" paragraph="Hand-Picked and Perfectly Roasted: Experience the Authentic Taste of Our Freshly Roasted Coffee Beans" heading="Perfection in Every Sip" />

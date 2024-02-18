@@ -4,40 +4,51 @@ import { CSSTransition } from "react-transition-group";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
+function Nav({ md }) {
+    return (
+        <div className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8`}>
+            <nav className="text-primary flex md:uppercase md:font-bold text-2xl md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
+                <Link to="/" className="md:hover:text-secondary">Menu</Link>
+                <Link to="/" className="md:hover:text-secondary">Rewards</Link>
+                <Link to="/" className="md:hover:text-secondary">Gift Cards</Link>
+            </nav>
+            <hr />
+            <div className="flex gap-3">
+                <button className="light">Sign In</button>
+                <button className="">Join Now</button>
+            </div>
+        </div>
+    );
+}
+
 function Header() {
     const [sideNavIn, setSideNavIn] = useState(false);
     const sideNavBar = useRef(null);
     const sideNavShadow = useRef(null);
 
-    return <header className="fixed top-0 w-full z-10 mb-10">
-        <div className="flex shadow-md bg-white justify-between items-center p-3">
-            <div className="logo">
-                <Logo size={7} />
-            </div>
-            <div onClick={() => setSideNavIn(!sideNavIn)} className="hover-max-width-height-anim relative cursor-pointer text-primary p-2 before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:bg-gray-200 active:before:bg-gray-300 before:max-w-0 before:h-full before:w-full before:max-h-0 before:rounded-full before:z-0 hover:before:max-w-24 hover:before:max-h-24" style={{ transition: "max-height 0.2s ease" }}>
-                <HiMenu size={28} className="relative z-10" />
-            </div>
-        </div>
-        <CSSTransition nodeRef={sideNavBar} in={sideNavIn} timeout={300} classNames="side-nav" unmountOnExit>
-            <div ref={sideNavBar} className="flex flex-col gap-10 bg-white fixed -z-20 right-0 w-4/5 h-screen py-14 px-8">
-                <nav className="text-primary flex text-2xl flex-col gap-8">
-                    <Link to="/">Menu</Link>
-                    <Link to="/">Rewards</Link>
-                    <Link to="/">Gift Cards</Link>
-                </nav>
-                <hr />
-                <div className="flex gap-3">
-                    <button className="light">Sign In</button>
-                    <button className="">Join Now</button>
+    return (
+        <header className="fixed top-0 w-full z-10 mb-10">
+            <div className="flex shadow-md bg-white justify-between items-center p-3 md:p-6">
+                <div className="logo flex items-center gap-5">
+                    <Logo size={7} />
+                    <div className="text-primary text-xl lg:text-2xl font-bold">
+                        Caffeine Corner
+                    </div>
                 </div>
-                <div></div>
+                <div onClick={() => setSideNavIn(!sideNavIn)} className="md:hidden hover-max-width-height-anim relative cursor-pointer text-primary p-2 before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:bg-gray-200 active:before:bg-gray-300 before:max-w-0 before:h-full before:w-full before:max-h-0 before:rounded-full before:z-0 hover:before:max-w-24 hover:before:max-h-24" style={{ transition: "max-height 0.2s ease" }}>
+                    <HiMenu size={28} className="relative z-10" />
+                </div>
+                <Nav md={true} />
             </div>
-        </CSSTransition>
-        <CSSTransition nodeRef={sideNavShadow} in={sideNavIn} timeout={300} classNames="fade" unmountOnExit>
-            <div ref={sideNavShadow} className="h-screen w-full absolute -z-30 right-0 bg-black opacity-40" onClick={() => setSideNavIn(!sideNavIn)}>
-            </div>
-        </CSSTransition>
-    </header>;
+            <CSSTransition nodeRef={sideNavBar} in={sideNavIn} timeout={300} classNames="side-nav" unmountOnExit>
+                <Nav ref={sideNavBar} md={false} />
+            </CSSTransition>
+            <CSSTransition nodeRef={sideNavShadow} in={sideNavIn} timeout={300} classNames="fade" unmountOnExit>
+                <div ref={sideNavShadow} className="md:hidden h-screen w-full absolute -z-30 right-0 bg-black opacity-40" onClick={() => setSideNavIn(!sideNavIn)}>
+                </div>
+            </CSSTransition>
+        </header>
+    );
 }
 
 export default Header;
