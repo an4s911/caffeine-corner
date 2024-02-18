@@ -45,3 +45,9 @@ button {
 button.light {
     @apply text-primary bg-fourth border-primary;
 }
+
+.hover-max-width-height-anim::before {
+    transition-property: max-width, max-height;
+    transition-duration: 300ms;
+    transtition-timing-function: linear;
+}

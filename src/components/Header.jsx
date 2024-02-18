@@ -14,7 +14,9 @@ function Header() {
             <div className="logo">
                 <Logo size={7} />
             </div>
-            <HiMenu size={28} className="cursor-pointer text-primary" onClick={() => setSideNavIn(!sideNavIn)} />
+            <div onClick={() => setSideNavIn(!sideNavIn)} className="hover-max-width-height-anim relative cursor-pointer text-primary p-2 before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:bg-gray-200 active:before:bg-gray-300 before:max-w-0 before:h-full before:w-full before:max-h-0 before:rounded-full before:z-0 hover:before:max-w-24 hover:before:max-h-24" style={{ transition: "max-height 0.2s ease" }}>
+                <HiMenu size={28} className="relative z-10" />
+            </div>
         </div>
         <CSSTransition nodeRef={sideNavBar} in={sideNavIn} timeout={300} classNames="side-nav" unmountOnExit>
             <div ref={sideNavBar} className="flex flex-col gap-10 bg-white absolute -z-20 right-0 w-4/5 h-screen py-14 px-8">
