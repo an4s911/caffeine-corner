@@ -5,7 +5,7 @@ import image3 from "../images/card/3.jpg"
 import image4 from "../images/card/4.jpg"
 
 function Main() {
-    const orderNowUrl = "/";
+    const orderNowUrl = "/order-now";
     return (
         <main className="flex flex-col gap-6 mb-6 mt-24 md:mt-28 max-w-screen-2xl mx-auto xl:px-5 xl:py-4">
             <Card image={image1} buttonLinkUrl={orderNowUrl} buttonText="Order Now" paragraph="Experience the Classic Latte, a timeless favorite, under 200 calories in a grande." heading="Feel-good finds" />

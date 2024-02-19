@@ -8,14 +8,14 @@ function Nav({ md }) {
     return (
         <div className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8`}>
             <nav className="text-primary flex md:uppercase md:font-bold text-2xl md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
-                <Link to="/" className="md:hover:text-secondary">Menu</Link>
-                <Link to="/" className="md:hover:text-secondary">Rewards</Link>
-                <Link to="/" className="md:hover:text-secondary">Gift Cards</Link>
+                <Link to="/menu" className="md:hover:text-secondary">Menu</Link>
+                <Link to="/rewards" className="md:hover:text-secondary">Rewards</Link>
+                <Link to="/gift-cards" className="md:hover:text-secondary">Gift Cards</Link>
             </nav>
             <hr />
             <div className="flex gap-3">
-                <button className="light">Sign In</button>
-                <button className="">Join Now</button>
+                <Link to="/login"><button className="light">Sign In</button></Link>
+                <Link to="/register"><button className="">Join Now</button></Link>
             </div>
         </div>
     );
@@ -29,12 +29,12 @@ function Header() {
     return (
         <header className="fixed top-0 w-full z-10 mb-10 md:shadow-md">
             <div className="flex shadow-md md:shadow-none bg-white justify-between items-center p-3 md:p-6 max-w-screen-2xl mx-auto">
-                <div className="logo flex items-center gap-5">
+                <Link to="/" className="logo flex items-center gap-5">
                     <Logo size={7} />
                     <div className="text-primary text-xl lg:text-2xl font-bold">
                         Caffeine Corner
                     </div>
-                </div>
+                </Link>
                 <div onClick={() => setSideNavIn(!sideNavIn)} className="md:hidden hover-max-width-height-anim relative cursor-pointer text-primary p-2 before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:bg-gray-200 active:before:bg-gray-300 before:max-w-0 before:h-full before:w-full before:max-h-0 before:rounded-full before:z-0 hover:before:max-w-24 hover:before:max-h-24" style={{ transition: "max-height 0.2s ease" }}>
                     <HiMenu size={28} className="relative z-10" />
                 </div>
