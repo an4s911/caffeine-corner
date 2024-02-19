@@ -80,7 +80,7 @@ function Menu() {
                                 <CSSTransition
                                     in={onSignature}
                                     nodeRef={signatureRef}
-                                    timeout={500}
+                                    timeout={300}
                                     classNames="signature"
                                 >
                                     <img
