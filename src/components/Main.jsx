@@ -5,7 +5,7 @@ import image3 from "../images/card/3.jpg";
 import image4 from "../images/card/4.jpg";
 
 function Main() {
-    const orderNowUrl = "/order-now";
+    const orderNowUrl = "/menu";
     return (
         <main className="flex flex-col gap-6 mb-6 max-w-screen-2xl mx-auto xl:px-14 xl:py-4">
             <Card

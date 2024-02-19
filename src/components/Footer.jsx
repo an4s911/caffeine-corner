@@ -44,7 +44,7 @@ function Footer() {
                     <h3>Store</h3>
                     <div>
                         <p>Order from our local stores or over the phone</p>
-                        <Link to="/order-now">
+                        <Link to="/menu">
                             <button>Order Now</button>
                         </Link>
                     </div>
