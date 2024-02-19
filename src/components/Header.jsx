@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Nav = forwardRef(({ md }, ref) => {
     return (
-        <div ref={ref} className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white top-0 fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8 pt-24`}>
+        <div ref={ref} className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white top-0 fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8 pt-24 md:pt-0`}>
             <nav className="text-primary flex md:uppercase md:font-bold text-2xl md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
                 <Link to="/menu" className="md:hover:text-secondary">Menu</Link>
                 <Link to="/rewards" className="md:hover:text-secondary">Rewards</Link>
@@ -27,7 +27,7 @@ function Header() {
     const sideNavShadow = useRef(null);
 
     return (
-        <header className="relative w-full z-10 mb-10 md:shadow-md">
+        <header className="relative w-full z-10 mb-6 md:shadow-md">
             <div className="flex shadow-md md:shadow-none bg-white justify-between items-center p-3 md:p-6 max-w-screen-2xl mx-auto">
                 <Link to="/" className="logo flex items-center gap-5">
                     <Logo size={7} />
