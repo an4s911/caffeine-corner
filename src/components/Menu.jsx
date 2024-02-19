@@ -35,7 +35,7 @@ function Menu() {
     const signatureRef = useRef(null);
 
     return (
-        <div id="menu" className="flex flex-col gap-8 px-8 py-10">
+        <div id="menu" className="flex flex-col gap-8 px-8 py-10 xl:px-14">
             <h2 className="text-3xl text-primary font-bold">Menu</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <div className="food-category">

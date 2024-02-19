@@ -36,7 +36,7 @@ function Header() {
 
     return (
         <header className="relative w-full z-10 mb-6 md:shadow-md">
-            <div className="flex shadow-md md:shadow-none bg-white justify-between items-center p-3 md:p-6 max-w-screen-2xl mx-auto">
+            <div className="flex shadow-md md:shadow-none bg-white justify-between items-center p-3 md:p-6 xl:px-14 max-w-screen-2xl mx-auto">
                 <Link to="/" className="logo flex items-center gap-5">
                     <Logo size={7} />
                     <div className="text-primary text-xl lg:text-2xl font-bold">
