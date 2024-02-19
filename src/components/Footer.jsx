@@ -27,8 +27,7 @@ function Footer() {
                 <div className="address">
                     <h3>Address</h3>
                     <div>
-                        <p>123 Main Street</p>
-                        <p>Anytown, USA 12345</p>
+                        <p>123 Main Street<br />Anytown, USA 12345</p>
                     </div>
                 </div>
                 <div className="order">

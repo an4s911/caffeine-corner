@@ -59,7 +59,7 @@ a {
 /*     @apply scale-105; */
 /* } */
 
-a:not(:has(>button)):hover {
+a:not(:has(> button)):hover {
     @apply scale-105;
 }
 
@@ -78,13 +78,21 @@ button.light,
     @apply md:order-1;
 }
 
+.card:nth-child(even) {
+    @apply text-primary;
+}
+
+.card:nth-child(odd) {
+    @apply text-fourth;
+}
+
 .footer-primary-nav > div,
 .footer-primary-nav > div > div {
     @apply flex flex-col;
 }
 
 .footer-primary-nav > div {
-    @apply gap-5 md:gap-6;
+    @apply gap-5 md:gap-6 text-primary;
 }
 .footer-primary-nav > div > div {
     @apply gap-2 md:gap-3;
@@ -99,7 +107,7 @@ button.light,
 }
 
 .footer-primary-nav > div > div > p,
-.footer-primary-nav > div > div > a {
+.footer-primary-nav > div > div > a:not(:has(> button)) {
     @apply text-sm text-gray-400;
 }
 
@@ -107,10 +115,10 @@ footer {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-footer .social-links  .icon {
+footer .social-links .icon {
     @apply w-7 h-7 lg:w-9 lg:h-9 transition-all;
 }
 
-footer .social-links  .icon:hover {
+footer .social-links .icon:hover {
     @apply scale-105;
 }
