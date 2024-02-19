@@ -20,7 +20,7 @@ function Footer() {
                 <div className="contact">
                     <h3>Contact</h3>
                     <div>
-                        {phoneNumbers.map(number => <Link to={`tel:${number}`}>{number}</Link>)}
+                        {phoneNumbers.map((number, index) => <Link key={index} to={`tel:${number}`}>{number}</Link>)}
                         <Link to={`mailto:${email}`}>{email}</Link>
                     </div>
                 </div>
