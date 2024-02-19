@@ -14,7 +14,7 @@ const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
             ref={ref}
             className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white top-0 fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8 pt-24 md:pt-0`}
         >
-            <nav className="text-primary flex md:uppercase md:font-bold text-2xl w-max md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
+            <nav className="text-primary flex md:uppercase md:font-bold text-2xl w-max md:text-lg flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
                 <CustomLink to="/menu" className="md:hover:text-secondary">
                     Menu
                 </CustomLink>
@@ -25,15 +25,6 @@ const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
                     Gift Cards
                 </CustomLink>
             </nav>
-            <hr />
-            <div className="flex gap-3">
-                <CustomLink to="/login">
-                    <button className="light">Sign In</button>
-                </CustomLink>
-                <CustomLink to="/register">
-                    <button className="">Join Now</button>
-                </CustomLink>
-            </div>
         </div>
     );
 });
