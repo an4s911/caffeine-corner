@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 * {
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Kanit", sans-serif;
+    letter-spacing: 1.2px;
 }
 
 .side-nav-enter {
