@@ -4,31 +4,35 @@ import { CSSTransition } from "react-transition-group";
 import { useState, useRef, forwardRef } from "react";
 import { Link } from "react-router-dom";
 
-const Nav = forwardRef(({ md }, ref) => {
+const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
+    const CustomLink = ({ ...props  }) => {
+        return <Link {...props} onClick={() => setSideNavIn(false)} />
+    }
+
     return (
         <div
             ref={ref}
             className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white top-0 fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8 pt-24 md:pt-0`}
         >
-            <nav className="text-primary flex md:uppercase md:font-bold text-2xl md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
-                <Link to="/menu" className="md:hover:text-secondary">
+            <nav className="text-primary flex md:uppercase md:font-bold text-2xl w-max md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
+                <CustomLink to="/menu" className="md:hover:text-secondary">
                     Menu
-                </Link>
-                <Link to="/rewards" className="md:hover:text-secondary">
+                </CustomLink>
+                <CustomLink to="/rewards" className="md:hover:text-secondary">
                     Rewards
-                </Link>
-                <Link to="/gift-cards" className="md:hover:text-secondary">
+                </CustomLink>
+                <CustomLink to="/gift-cards" className="md:hover:text-secondary">
                     Gift Cards
-                </Link>
+                </CustomLink>
             </nav>
             <hr />
             <div className="flex gap-3">
-                <Link to="/login">
+                <CustomLink to="/login">
                     <button className="light">Sign In</button>
-                </Link>
-                <Link to="/register">
+                </CustomLink>
+                <CustomLink to="/register">
                     <button className="">Join Now</button>
-                </Link>
+                </CustomLink>
             </div>
         </div>
     );
@@ -64,7 +68,7 @@ function Header() {
                 classNames="side-nav"
                 unmountOnExit
             >
-                <Nav ref={sideNavBar} md={false} />
+                <Nav ref={sideNavBar} setSideNavIn={setSideNavIn} md={false} />
             </CSSTransition>
             <CSSTransition
                 nodeRef={sideNavShadow}
