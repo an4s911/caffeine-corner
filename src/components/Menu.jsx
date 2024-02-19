@@ -95,7 +95,7 @@ function Menu() {
                                             setOnSignature(false);
                                             setTimeout(() => {
                                             e.target.style.animation =
-                                                "wobble 1s ease-in-out infinite";
+                                                "wobble 1s linear infinite";
                                             }, 400);
                                         }}
                                         ref={signatureRef}
