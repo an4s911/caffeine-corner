@@ -1,6 +1,54 @@
+import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 function Footer() {
-    return <footer></footer>;
+    const email = "5r5P1@example.com";
+    const phoneNumbers = ["123-456-7890", "987-654-3210", "555-555-5555"];
+    return (
+        <footer className="relative z-10 px-6 md:px-10">
+            <div className="footer-primary-nav grid grid-cols-2 grid-rows-2 lg:grid-rows-1 md:grid-cols-3 lg:grid-cols-4 md:px-4 md:py-14 py-5 gap-y-10">
+                <div className="about">
+                    <h3><Link to="/about">About Us</Link></h3>
+                    <div>
+                        <Link to="/about#company">Our Company</Link>
+                        <Link to="/about#coffee">Our Coffee</Link>
+                        <Link to="/about#news">Stories and News</Link>
+                        <Link to="/about#partners">Partners</Link>
+                    </div>
+                </div>
+                <div className="contact">
+                    <h3>Contact</h3>
+                    <div>
+                        {phoneNumbers.map(number => <Link to={`tel:${number}`}>{number}</Link>)}
+                        <Link to={`mailto:${email}`}>{email}</Link>
+                    </div>
+                </div>
+                <div className="address">
+                    <h3>Address</h3>
+                    <div>
+                        <p>123 Main Street</p>
+                        <p>Anytown, USA 12345</p>
+                    </div>
+                </div>
+                <div className="order">
+                    <h3>Store</h3>
+                    <div>
+                        <p>Order from our local stores or over the phone</p>
+                        <Link to="/order-now"><button>Order Now</button></Link>
+                    </div>
+                </div>
+            </div>
+            <hr className="mx-2 border-1 border-secondary" />
+            <div className="social-links flex items-center gap-4 py-6 px-1 md:py-10">
+                <Link to="https://twitter.com"><FaSquareXTwitter className="icon" /></Link>
+                <Link to="https://facebook.com"><FaFacebook color="#3b5998" className="icon" /></Link>
+                <Link to="https://instagram.com"><FaInstagram color="#e1306c" className="icon" /></Link>
+                <Link to="https://github.com/an4s911/caffeine-corner"><FaGithub className="icon" /></Link>
+            </div>
+            <p className="text-gray-600">&copy; 2024 Caffeine Corner | Inspired by <Link className="text-primary hover:text-secondary" to="https://www.starbucks.com/">Starbucks</Link></p>
+        </footer>
+    );
 }
 
 export default Footer;
