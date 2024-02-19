@@ -147,7 +147,7 @@ footer .social-links .icon:hover {
 }
 
 #menu .menu-item img {
-    @apply w-20 h-20 rounded-full overflow-clip shadow-md;
+    @apply w-20 h-20 min-w-20 rounded-full overflow-clip shadow-md;
 }
 
 .food-category {
