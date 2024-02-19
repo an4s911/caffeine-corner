@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Nav = forwardRef(({ md }, ref) => {
     return (
-        <div ref={ref} className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8`}>
+        <div ref={ref} className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white top-0 fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8 pt-24`}>
             <nav className="text-primary flex md:uppercase md:font-bold text-2xl md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
                 <Link to="/menu" className="md:hover:text-secondary">Menu</Link>
                 <Link to="/rewards" className="md:hover:text-secondary">Rewards</Link>
@@ -27,7 +27,7 @@ function Header() {
     const sideNavShadow = useRef(null);
 
     return (
-        <header className="fixed top-0 w-full z-10 mb-10 md:shadow-md">
+        <header className="relative w-full z-10 mb-10 md:shadow-md">
             <div className="flex shadow-md md:shadow-none bg-white justify-between items-center p-3 md:p-6 max-w-screen-2xl mx-auto">
                 <Link to="/" className="logo flex items-center gap-5">
                     <Logo size={7} />
@@ -44,7 +44,7 @@ function Header() {
                 <Nav ref={sideNavBar} md={false} />
             </CSSTransition>
             <CSSTransition nodeRef={sideNavShadow} in={sideNavIn} timeout={300} classNames="fade" unmountOnExit>
-                <div ref={sideNavShadow} className="md:hidden h-screen w-full absolute -z-30 right-0 bg-black opacity-40" onClick={() => setSideNavIn(!sideNavIn)}>
+                <div ref={sideNavShadow} className="md:hidden h-screen fixed top-0 w-full -z-30 right-0 bg-black opacity-40" onClick={() => setSideNavIn(!sideNavIn)}>
                 </div>
             </CSSTransition>
         </header>
