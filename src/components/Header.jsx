@@ -1,12 +1,12 @@
 import Logo from "./Logo";
 import { HiMenu } from "react-icons/hi";
 import { CSSTransition } from "react-transition-group";
-import { useState, useRef } from "react";
+import { useState, useRef, forwardRef } from "react";
 import { Link } from "react-router-dom";
 
-function Nav({ md }) {
+const Nav = forwardRef(({ md }, ref) => {
     return (
-        <div className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8`}>
+        <div ref={ref} className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8`}>
             <nav className="text-primary flex md:uppercase md:font-bold text-2xl md:text-sm flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
                 <Link to="/menu" className="md:hover:text-secondary">Menu</Link>
                 <Link to="/rewards" className="md:hover:text-secondary">Rewards</Link>
@@ -19,7 +19,7 @@ function Nav({ md }) {
             </div>
         </div>
     );
-}
+})
 
 function Header() {
     const [sideNavIn, setSideNavIn] = useState(false);
