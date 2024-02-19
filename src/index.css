@@ -123,3 +123,73 @@ footer .social-links .icon {
 footer .social-links .icon:hover {
     @apply scale-105;
 }
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#menu .menu-item {
+    @apply flex items-center justify-start gap-6 text-base md:gap-14 md:text-xl;
+}
+
+#menu .menu-item img {
+    @apply w-20 h-20 rounded-full overflow-clip shadow-md;
+}
+
+.food-category {
+    @apply flex flex-col gap-4 md:gap-6;
+}
+
+#menu .menu-item img.sign {
+    @apply w-20 h-20 rounded-full overflow-clip shadow-md;
+    animation: wobble 1s linear infinite;
+}
+
+.signature-enter {
+    transform: scale(1);
+    border-radius: 100% !important;
+    animation: none;
+}
+.signature-enter-active {
+    transform: scale(4);
+    transition-property: transform, border-radius;
+    transition-timing-function: ease-in-out;
+    transition-duration: 400ms;
+    border-radius: 10% !important;
+    animation: none;
+}
+
+.signature-enter-done {
+    transform: scale(4);
+    border-radius: 10% !important;
+    animation: none;
+}
+
+.signature-exit {
+    transform: scale(4);
+    border-radius: 10% !important;
+    animation: none;
+}
+
+.signature-exit-active {
+    transform: scale(1);
+    transition-property: transform, border-radius;
+    transition-timing-function: ease-in-out;
+    transition-duration: 400ms;
+    border-radius: 100% !important;
+    animation: wobble 1s ease-in-out infinite;
+}
