@@ -112,6 +112,7 @@ button.light,
 }
 
 footer {
+    @apply max-w-screen-2xl mx-auto;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 

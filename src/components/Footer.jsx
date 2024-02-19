@@ -6,7 +6,7 @@ function Footer() {
     const email = "5r5P1@example.com";
     const phoneNumbers = ["123-456-7890", "987-654-3210", "555-555-5555"];
     return (
-        <footer className="relative px-6 md:px-10">
+        <footer className="relative px-6 md:px-10 pb-6">
             <div className="footer-primary-nav grid grid-cols-2 grid-rows-2 lg:grid-rows-1 md:grid-cols-3 lg:grid-cols-4 md:px-4 md:py-14 py-5 gap-y-10">
                 <div className="about">
                     <h3><Link to="/about">About Us</Link></h3>
@@ -45,7 +45,11 @@ function Footer() {
                 <Link to="https://instagram.com"><FaInstagram color="#e1306c" className="icon" /></Link>
                 <Link to="https://github.com/an4s911/caffeine-corner"><FaGithub className="icon" /></Link>
             </div>
-            <p className="text-gray-600">&copy; 2024 Caffeine Corner | Inspired by <Link className="text-primary hover:text-secondary" to="https://www.starbucks.com/">Starbucks</Link></p>
+            <p className="text-gray-600 flex whitespace-nowrap flex-wrap gap-2">
+                <span>&copy; 2024 Caffeine Corner</span>
+                <span className="hidden sm:block">|</span>
+                <span>Inspired by <Link className="text-primary hover:text-secondary" to="https://www.starbucks.com/">Starbucks</Link></span>
+            </p>
         </footer>
     );
 }
