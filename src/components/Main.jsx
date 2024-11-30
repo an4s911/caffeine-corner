@@ -7,7 +7,7 @@ import image4 from "../images/card/4.jpg";
 function Main() {
     const orderNowUrl = "/menu";
     return (
-        <main className="flex flex-col gap-6 mb-6 max-w-screen-2xl mx-auto xl:px-14 xl:py-4">
+        <main className="flex flex-col gap-6 mb-6 max-w-screen-2xl mx-auto xl:px-14 xl:py-4 mt-6">
             <Card
                 image={image1}
                 buttonLinkUrl={orderNowUrl}

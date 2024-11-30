@@ -5,9 +5,9 @@ import { useState, useRef, forwardRef } from "react";
 import { Link } from "react-router-dom";
 
 const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
-    const CustomLink = ({ ...props  }) => {
-        return <Link {...props} onClick={() => setSideNavIn(false)} />
-    }
+    const CustomLink = ({ ...props }) => {
+        return <Link {...props} onClick={() => setSideNavIn(false)} />;
+    };
 
     return (
         <div
@@ -21,7 +21,10 @@ const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
                 <CustomLink to="/rewards" className="md:hover:text-secondary">
                     Rewards
                 </CustomLink>
-                <CustomLink to="/gift-cards" className="md:hover:text-secondary">
+                <CustomLink
+                    to="/gift-cards"
+                    className="md:hover:text-secondary"
+                >
                     Gift Cards
                 </CustomLink>
             </nav>
@@ -35,7 +38,7 @@ function Header() {
     const sideNavShadow = useRef(null);
 
     return (
-        <header className="relative w-full z-10 mb-6 md:shadow-md">
+        <header className="relative w-full z-10 md:shadow-md">
             <div className="flex shadow-md md:shadow-none bg-white justify-between items-center p-3 md:p-6 xl:px-14 max-w-screen-2xl mx-auto">
                 <Link to="/" className="logo flex items-center gap-5">
                     <Logo size={7} />
