@@ -1,10 +1,23 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { useEffect } from "react";
 
 function Footer() {
     const email = "5r5P1@example.com";
     const phoneNumbers = ["123-456-7890", "987-654-3210", "555-555-5555"];
+
+    const hash = useLocation();
+
+    useEffect(() => {
+        if (hash.hash) {
+            const element = document.querySelector(hash.hash);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [hash.hash]);
+
     return (
         <footer className="relative px-6 md:px-10 pb-6">
             <div className="footer-primary-nav grid grid-cols-2 grid-rows-2 lg:grid-rows-1 md:grid-cols-3 lg:grid-cols-4 md:px-4 md:py-14 py-5 gap-y-10">
@@ -14,9 +27,9 @@ function Footer() {
                     </h3>
                     <div>
                         <Link to="/about#company">Our Company</Link>
+                        <Link to="/about#story">Our Story</Link>
                         <Link to="/about#coffee">Our Coffee</Link>
-                        <Link to="/about#news">Stories and News</Link>
-                        <Link to="/about#partners">Partners</Link>
+                        <Link to="#">Partners</Link>
                     </div>
                 </div>
                 <div className="contact">

@@ -3,7 +3,7 @@ import StoreFrontImg from "../images/storefront.webp";
 function About() {
     return (
         <section className="mx-5 md:mx-10 lg:w-2/3 lg:mx-auto flex flex-col gap-10 lg:gap-16 my-16">
-            <div className="flex flex-col gap-10">
+            <div id="company" className="flex flex-col gap-10">
                 <h1 className="text-3xl lg:text-5xl font-bold">Our Company</h1>
                 <div className="w-full">
                     <img src={StoreFrontImg} alt="storefront" />
@@ -21,6 +21,7 @@ function About() {
             </div>
             {[
                 {
+                    id: "story",
                     title: "Our Story",
                     description: [
                         "It all began with a passion for exceptional coffee and a desire to create a space where every cup tells a story. Founded by coffee enthusiasts with a dream to bring world-class brews closer to home, Caffeine Corner was designed to blend modern design with the comfort of a neighborhood cafe.",
@@ -28,6 +29,7 @@ function About() {
                     ],
                 },
                 {
+                    id: "coffee",
                     title: "Our Coffee Philosophy",
                     description: [
                         "Coffee at Caffeine Corner starts long before it reaches your cup. We collaborate with sustainable farmers and cooperatives from coffee-growing regions across the world to source premium, ethically grown beans. From the highlands of Ethiopia to the plantations of Colombia, we carefully select beans that reflect the rich diversity of global coffee cultures.",
@@ -53,7 +55,11 @@ function About() {
                     ],
                 },
             ].map((item, index) => (
-                <div key={index} className="flex flex-col gap-6 md:gap-10">
+                <div
+                    id={item.id ? item.id : ""}
+                    key={index}
+                    className="flex flex-col gap-6 md:gap-10"
+                >
                     <h2 className="text-2xl md:text-4xl font-bold">
                         {item.title}
                     </h2>
@@ -75,7 +81,6 @@ function About() {
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d171642.30591038315!2d28.500633717067238!3d41.017741363616324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55ff498853dcf%3A0x79450ec9bcd3801b!2sCAFFEINE%20CORNER!5e0!3m2!1sen!2str!4v1733073431514!5m2!1sen!2str"
                     className="w-full h-96 lg:h-[450px] border-0"
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
                 />
             </div>
         </section>
