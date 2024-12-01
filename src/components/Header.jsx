@@ -14,7 +14,7 @@ const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
                 {[
                     { name: "Menu", link: "/menu" },
                     { name: "Rewards", link: "/rewards" },
-                    { name: "Gift Cards", link: "/gift-cards" },
+                    { name: "About", link: "/about" },
                 ].map((item, index) => (
                     <div onClick={() => setSideNavIn(false)}>
                         <Link
