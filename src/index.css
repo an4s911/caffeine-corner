@@ -154,6 +154,10 @@ footer .social-links .icon:hover {
     @apply flex flex-col gap-4 md:gap-6;
 }
 
+.menu-item {
+    @apply hover:translate-x-2 transition-transform cursor-pointer;
+}
+
 #menu .menu-item img.sign {
     @apply w-20 h-20 rounded-full overflow-clip shadow-md;
     animation: wobble 1s linear infinite;
