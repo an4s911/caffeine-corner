@@ -45,6 +45,11 @@ function Menu() {
             id="menu"
             className="flex flex-col gap-8 px-8 py-10 xl:px-14 max-w-screen-2xl mx-auto"
         >
+            <div className="w-full lg:w-2/3 flex self-center justify-center px-4 text-center text-nowrap bg-gray-200 mx-auto py-3 rounded-lg">
+                <p className="text-gray-500 text-base sm:text-lg md:text-xl italic">
+                    Placing an order is currently unavailable!
+                </p>
+            </div>
             <h2 className="text-3xl text-primary font-bold">Menu</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <div className="food-category">

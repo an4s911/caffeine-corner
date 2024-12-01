@@ -155,7 +155,7 @@ footer .social-links .icon:hover {
 }
 
 .menu-item {
-    @apply hover:translate-x-2 transition-transform cursor-pointer;
+    @apply hover:translate-x-2 transition-transform;
 }
 
 #menu .menu-item img.sign {
