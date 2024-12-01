@@ -30,6 +30,12 @@ function MenuCard({ image, name }) {
     );
 }
 
+function MenuCardList({ list }) {
+    return list.map((item, index) => (
+        <MenuCard key={index} image={item.src} name={item.name} />
+    ));
+}
+
 function Menu() {
     const [onSignature, setOnSignature] = useState(false);
     const signatureRef = useRef(null);
@@ -49,11 +55,30 @@ function Menu() {
                         <hr />
                     </div>
                     <div className="flex flex-col gap-8 md:gap-10 text-primary text-lg">
-                        <MenuCard image={espresso} name="Espresso" />
-                        <MenuCard image={latte} name="Latte" />
-                        <MenuCard image={cappuccino} name="Cappuccino" />
-                        <MenuCard image={frappuccino} name="Frappuccino" />
-                        <MenuCard image={macchiato} name="Macchiato" />
+                        <MenuCardList
+                            list={[
+                                {
+                                    src: espresso,
+                                    name: "Espresso",
+                                },
+                                {
+                                    src: latte,
+                                    name: "Latte",
+                                },
+                                {
+                                    src: cappuccino,
+                                    name: "Cappuccino",
+                                },
+                                {
+                                    src: frappuccino,
+                                    name: "Frappuccino",
+                                },
+                                {
+                                    src: macchiato,
+                                    name: "Macchiato",
+                                },
+                            ]}
+                        />
                     </div>
                 </div>
                 <div className="food-category">
@@ -64,10 +89,26 @@ function Menu() {
                         <hr />
                     </div>
                     <div className="flex flex-col gap-8 md:gap-10 text-primary text-lg">
-                        <MenuCard image={cookies} name="Cookies" />
-                        <MenuCard image={cinnamonRolls} name="Cinnamon Rolls" />
-                        <MenuCard image={bagel} name="Bagels" />
-                        <MenuCard image={cupcake} name="Cupcakes" />
+                        <MenuCardList
+                            list={[
+                                {
+                                    src: cookies,
+                                    name: "Cookies",
+                                },
+                                {
+                                    src: cinnamonRolls,
+                                    name: "Cinnamon Rolls",
+                                },
+                                {
+                                    src: bagel,
+                                    name: "Bagels",
+                                },
+                                {
+                                    src: cupcake,
+                                    name: "Cupcakes",
+                                },
+                            ]}
+                        />
                     </div>
                 </div>
                 <div className="food-category">
@@ -109,13 +150,26 @@ function Menu() {
                                 Our Signature Banana Toast
                             </p>
                         </div>
-                        <MenuCard
-                            image={eggMushroom}
-                            name="Omelette with Mushroom"
+                        <MenuCardList
+                            list={[
+                                {
+                                    src: eggMushroom,
+                                    name: "Omelette with Mushroom",
+                                },
+                                {
+                                    src: nutellaCrepe,
+                                    name: "Nutella Crepe",
+                                },
+                                {
+                                    src: oatmeal,
+                                    name: "Oatmeal",
+                                },
+                                {
+                                    src: tunaSalad,
+                                    name: "Healty Tuna Salad",
+                                },
+                            ]}
                         />
-                        <MenuCard image={nutellaCrepe} name="Nutella Crepe" />
-                        <MenuCard image={oatmeal} name="Oatmeal" />
-                        <MenuCard image={tunaSalad} name="Healty Tuna Salad" />
                     </div>
                 </div>
             </div>
