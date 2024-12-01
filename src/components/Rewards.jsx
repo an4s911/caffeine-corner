@@ -34,7 +34,7 @@ function Rewards() {
                         But at our store and get coupons for a chance to win
                         more
                     </p>
-                    <div className="steps grid grid-cols-3 gap-20 mt-5 px-24">
+                    <div className="steps grid grid-cols-1 lg:grid-cols-3 gap-20 mt-5 px-24">
                         {[
                             {
                                 id: 1,
