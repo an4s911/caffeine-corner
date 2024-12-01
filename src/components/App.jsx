@@ -3,7 +3,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import Menu from "./Menu";
 import Rewards from "./Rewards";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router";
 
 function App() {
     return (

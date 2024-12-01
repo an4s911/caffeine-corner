@@ -2,7 +2,7 @@ import Logo from "./Logo";
 import { HiMenu } from "react-icons/hi";
 import { CSSTransition } from "react-transition-group";
 import { useState, useRef, forwardRef } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
     const CustomLink = ({ ...props }) => {
