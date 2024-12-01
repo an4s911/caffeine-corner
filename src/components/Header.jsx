@@ -16,14 +16,15 @@ const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
                     { name: "Rewards", link: "/rewards" },
                     { name: "Gift Cards", link: "/gift-cards" },
                 ].map((item, index) => (
-                    <Link
-                        key={index}
-                        to={item.link}
-                        className="md:hover:text-secondary"
-                        onClick={() => setSideNavIn(false)}
-                    >
-                        {item.name}
-                    </Link>
+                    <div onClick={() => setSideNavIn(false)}>
+                        <Link
+                            key={index}
+                            to={item.link}
+                            className="md:hover:text-secondary"
+                        >
+                            {item.name}
+                        </Link>
+                    </div>
                 ))}
             </nav>
         </div>
