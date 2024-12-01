@@ -5,28 +5,26 @@ import { useState, useRef, forwardRef } from "react";
 import { Link } from "react-router";
 
 const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
-    const CustomLink = ({ ...props }) => {
-        return <Link {...props} onClick={() => setSideNavIn(false)} />;
-    };
-
     return (
         <div
             ref={ref}
             className={`${md ? "hidden md:flex" : "flex md:hidden"} md:items-center flex-col md:gap-5 lg:gap-8 gap-10 bg-white top-0 fixed md:static md:z-0 md:h-auto md:w-auto md:flex-row -z-20 right-0 w-4/5 h-screen md:py-0 md:px-0 py-14 px-8 pt-24 md:pt-0`}
         >
             <nav className="text-primary flex md:uppercase md:font-bold text-2xl w-max md:text-lg flex-col gap-8 md:flex-row md:gap-4 lg:gap-10">
-                <CustomLink to="/menu" className="md:hover:text-secondary">
-                    Menu
-                </CustomLink>
-                <CustomLink to="/rewards" className="md:hover:text-secondary">
-                    Rewards
-                </CustomLink>
-                <CustomLink
-                    to="/gift-cards"
-                    className="md:hover:text-secondary"
-                >
-                    Gift Cards
-                </CustomLink>
+                {[
+                    { name: "Menu", link: "/menu" },
+                    { name: "Rewards", link: "/rewards" },
+                    { name: "Gift Cards", link: "/gift-cards" },
+                ].map((item, index) => (
+                    <Link
+                        key={index}
+                        to={item.link}
+                        className="md:hover:text-secondary"
+                        onClick={() => setSideNavIn(false)}
+                    >
+                        {item.name}
+                    </Link>
+                ))}
             </nav>
         </div>
     );
