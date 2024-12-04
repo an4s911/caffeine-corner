@@ -8,7 +8,7 @@ function About() {
                 <div className="w-full">
                     <img src={StoreFrontImg} alt="storefront" />
                 </div>
-                <p className="text-lg">
+                <p className="text-lg text-justify">
                     At Caffeine Corner, we believe that coffee is more than just
                     a drink; it’s a ritual, a connection, and an experience.
                     Inspired by the warmth and energy of the global coffee

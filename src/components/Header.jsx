@@ -2,9 +2,11 @@ import Logo from "./Logo";
 import { HiMenu } from "react-icons/hi";
 import { CSSTransition } from "react-transition-group";
 import { useState, useRef, forwardRef } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
+    const path = useLocation();
+
     return (
         <div
             ref={ref}
@@ -20,7 +22,7 @@ const Nav = forwardRef(({ md, setSideNavIn }, ref) => {
                         <Link
                             key={index}
                             to={item.link}
-                            className="md:hover:text-secondary"
+                            className={`md:hover:text-secondary ${path.pathname === item.link ? "underline text-secondary" : ""}`}
                         >
                             {item.name}
                         </Link>
