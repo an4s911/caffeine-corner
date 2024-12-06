@@ -171,7 +171,7 @@ function Menu() {
                                 },
                                 {
                                     src: tunaSalad,
-                                    name: "Healty Tuna Salad",
+                                    name: "Healthy Tuna Salad",
                                 },
                             ]}
                         />
